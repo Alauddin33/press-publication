@@ -7,6 +7,7 @@ const loadCatagories = () => {
         .catch(error => console.log(error))
 
 }
+loadCatagories();
 
 // catagory display section
 const displayCatagories = catagories => {
@@ -25,7 +26,7 @@ const displayCatagories = catagories => {
 }
 
 
-loadCatagories();
+
 
 const toggleSpinner = isLoading => {
     const loaderSection = document.getElementById('loader');
@@ -55,7 +56,7 @@ const loadNewsDetails = async (id) => {
 // news details display section
 
 const displayNewsDetails = elements => {
-    console.log(elements);
+    // console.log(elements);
     // display no news found
     const noNews = document.getElementById('no-found-message');
     if (elements.length === 0) {
@@ -90,20 +91,50 @@ const displayNewsDetails = elements => {
                 </div>
 
                 <div>
-                <button class="btn btn-warning">Show Details</button>
+                <button onclick="modalNewsDetails('${element._id}')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#newsDetailModal">Show Details</button>
                 </div>
                 </div>
-
+                
             </div>
         
         </div>
           `;
         newsDisplayContainer.appendChild(newsDiv);
+
+
     });
 
     // stop loader
     toggleSpinner(false);
 }
+
+
+const modalNewsDetails = (id) => {
+    const url = `https://openapi.programming-hero.com/api/news/${id}`;
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayModalDetails(data.data))
+    // .catch(error => console.log(error))
+}
+
+const displayModalDetails = (news) => {
+    console.log(news);
+    const modalTitle = document.getElementById('newsDetailModalLabel');
+    modalTitle.innerText = news[0].title;
+    const modalDetails = document.getElementById('modal-details');
+    modalDetails.innerHTML = `
+    <p>published date: ${news[0].author.published_date ? news[0].author.published_date : 'no data found'}</p>
+    <p class= "text-success">User view: ${news[0].total_view ? news[0].total_view : 'no user view'}</p>
+    <p class= "text-success">User Rating: ${news[0].rating ? news[0].rating.number : 'did not get user feedback'}</p>
+    
+    `
+}
+
+
+
+
+
 
 
 
