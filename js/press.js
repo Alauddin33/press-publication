@@ -81,10 +81,17 @@ const displayNewsDetails = elements => {
             <div class="card-body col-md-8 px-3">
                 <h5 class="card-title">${element.title}</h5>
                 <p class="card-text">${element.details.slice(0, 250)}...</p>
+
+                <div class="d-flex align-items-baseline justify-content-between">
                 <div class="d-flex align-items-baseline justify-content-between" style = "width: 40%;">
                 <p><img src="${element.author.img}" class="rounded-circle img-fluid" style = "width: 40px;" alt="...">
                 ${element.author.name}</p>
                 <p> <i class="fa-regular fa-eye px-1"></i> ${element.total_view}</p> 
+                </div>
+
+                <div>
+                <button class="btn btn-warning">Show Details</button>
+                </div>
                 </div>
 
             </div>
