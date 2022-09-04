@@ -18,7 +18,8 @@
                 <a class="navbar-brand text-info fw-bold fs-3">Press publication</a>
                 <form class="d-flex" role="search">
                     <button class="btn btn-outline-primary fs-5 mx-3" type="submit">News</button>
-                    <button class="btn btn-outline-primary fs-5 mx-3" type="submit">Blog</button>
+                    <button type="button" class="btn btn-outline-primary fs-5 mx-3" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Blog</button>
                 </form>
             </div>
         </nav>
@@ -29,7 +30,41 @@
         <!-- dinamic nav section end -->
     </header>
     <main style="min-height: calc(100vh - 40px);" class="container">
+
+        <!-- blog -->
+        <section>
+            <div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen-xxl-down">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">BLOG</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="bg-secondary p-2 text-dark bg-opacity-10">
+                <p class="text-success" id="items show"></p>
+            </div>
+        </section>
+
         <section id="news-display-container" class="my-5">
+
         </section>
 
         <!-- no found message option -->

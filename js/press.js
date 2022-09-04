@@ -14,13 +14,14 @@ const displayCatagories = catagories => {
 
     const navContainer = document.getElementById('nav-container');
     catagories.forEach(catagory => {
-        // console.log(catagory);
+        console.log(catagory);
         const navLi = document.createElement('li');
         navLi.classList.add('nav-item')
         navLi.innerHTML = `
         <button onclick="loadNewsDetails('${catagory.category_id}')" class="btn btn-primary my-4">${catagory.category_name}</button>
         `;
         navContainer.appendChild(navLi);
+
     });
 
 }
@@ -65,6 +66,13 @@ const displayNewsDetails = elements => {
     else {
         noNews.classList.add('d-none');
     }
+
+    // items count
+    const itemsShow = document.getElementById('items show');
+    itemsShow.innerText = `Search Result: ${elements.length} items found`;
+
+
+
     // display news
     const newsDisplayContainer = document.getElementById('news-display-container');
     newsDisplayContainer.innerHTML = '';
@@ -115,11 +123,11 @@ const modalNewsDetails = (id) => {
     fetch(url)
         .then(res => res.json())
         .then(data => displayModalDetails(data.data))
-    // .catch(error => console.log(error))
+        .catch(error => console.log(error))
 }
 
 const displayModalDetails = (news) => {
-    console.log(news);
+    // console.log(news);
     const modalTitle = document.getElementById('newsDetailModalLabel');
     modalTitle.innerText = news[0].title;
     const modalDetails = document.getElementById('modal-details');
@@ -130,6 +138,8 @@ const displayModalDetails = (news) => {
     
     `
 }
+
+
 
 
 
