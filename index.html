@@ -46,7 +46,56 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <ul>
+                                    <li class="fw-semibold fs-5">What is the difference between var let and const ?</li>
+                                    <p><span class="fw-bold fs-6">var</span> is a functional scope variable, can be
+                                        declared without initialization.It can be updated and re-declared into the
+                                        scope.
+                                        <br>
+                                        <span class="fw-bold fs-6">let</span> is a block scope variable, can be declared
+                                        without initialization. It can be updated but cannot be re-declared into the
+                                        scope.
+                                        <br>
+                                        <span class="fw-bold fs-6">const</span> is a block scope variable, It cannot be
+                                        declared without initialization. It cannot be updated or re-declared into the
+                                        scope.
+                                    </p>
+                                    <li class="fw-semibold fs-5">What is the difference between arrow function and
+                                        regular
+                                        function?</li>
+                                    <p>
+                                        Arrow functions is a new feature introduced in ES6, it is enable writing concise
+                                        functions in JavaScript.
+                                        <br>
+                                        Unlike regular functions, arrow functions do not have their own 'this'.
+                                        <br>
+                                        Arguments objects are not available in arrow functions, but are available in
+                                        regular functions.
+                                    </p>
+                                    <li class="fw-semibold fs-5">What is difference between map, forEach
+                                        and filter, find?</li>
+                                    <p>
+                                        The <span class="fw-bold fs-6">map()</span> method returns an entirely new array
+                                        with transformed elements and the
+                                        same amount of data. <br> In the case of <span
+                                            class="fw-bold fs-6">forEach()</span>,
+                                        even if it returns undefined, it
+                                        will mutate the original array with the callback.
+                                        <br>
+                                        Therefore, we see clearly that <span class="fw-bold fs-6">map()</span> relies on
+                                        immutability and <span class="fw-bold fs-6">forEach()</span> is a
+                                        mutator method.
+                                    </p>
+                                    <p>
+                                        <span class="fw-bold fs-6">find()</span> method return the first value which
+                                        match from the collection. find() method search the array from the start if the
+                                        desired value is matched then find() method return that value and terminate and
+                                        rest of the array is not process. <br>
+                                        <span class="fw-bold fs-6">filter()</span> method returns the match value from
+                                        the array. it search whole array from start to end and returns all the value
+                                        which is matched.
+                                    </p>
+                                </ul>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
